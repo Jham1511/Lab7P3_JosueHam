@@ -118,6 +118,7 @@ int main()
 			}//Fin del switch de saber el tipo de dojo
 			break;
 		}//Crear estudiante
+
 		case 2: {
 			cout << "Bienvenido a Modificar Estudiante" << endl;
 			cout << "De que dojo es?" << endl
@@ -144,6 +145,7 @@ int main()
 
 					estudiantesCobra[posEst].setNombre(nueNombre);
 					estudiantesCobra[posEst].setEdad(nueEdad);
+					cout << "Cambios realizados" << endl;
 					break;
 				}
 				case 2: {
@@ -162,6 +164,7 @@ int main()
 
 					estudiantesBlockchain[posEst].setNombre(nueNombre);
 					estudiantesBlockchain[posEst].setEdad(nueEdad);
+					cout << "Cambios realizados" << endl;
 					break;
 				}
 			default:
@@ -170,11 +173,43 @@ int main()
 			break;
 		}//Modificar estudiante
 		case 3: {
+			cout << "Bienvenido a Eliminar Estudiante" << endl;
+			cout << "De que dojo es?" << endl
+				<< "1-> Dojo Cobra" << endl
+				<< "2-> Dojo Blockchain" << endl
+				<< "Seleccione la opcion que desea: " << endl;
+			int opcionDojo;
+			cin >> opcionDojo;
+			switch (opcionDojo) {
+			case 1: {
+				imprimirCobras(estudiantesCobra);
+				cout << "Seleccione el estudiante que desea eliminar: " << endl;
+				int posCobras; cin >> posCobras;
 
+				estudiantesCobra.erase(estudiantesCobra.begin()+posCobras);
+				
+				cout << "Estudiante eliminado correctamente" << endl;
+				break;
+			}
+			case 2: {
+				imprimirBlockchains(estudiantesBlockchain);
+				cout << "Seleccione el estudiante que desea eliminar: " << endl;
+				int posBlock;
+				cin >> posBlock;
+
+				estudiantesBlockchain.erase(estudiantesBlockchain.begin() + posBlock);
+				cout << "Estudiante eliminado correctamente" << endl;
+				break;
+			}
+			default: 
+				cout << "No esta el dojo" << endl;
+			}
 			break;
 		}//Eliminar estudiante
-		case 4: {
 
+		case 4: {
+			imprimirCobras(estudiantesCobra);
+			imprimirBlockchains(estudiantesBlockchain);
 			break;
 		}//Listar estudiante
 		case 5: {
