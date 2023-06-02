@@ -34,3 +34,6 @@ int Estudiante::getEdad() {
 void Estudiante::setEdad(int edad) {
 	this->edad = edad;
 }
+Cinta Estudiante::getCinta() {
+	return *cinta;
+}

@@ -7,3 +7,19 @@ Cinta::Cinta() {
 Cinta::~Cinta() {
 	
 }
+
+int Cinta::getNivelCinta() {
+	return nivel;
+}
+
+string Cinta::getColorCinta() {
+	return ColorCinta;
+}
+
+void Cinta::setNivelCinta(int nivelCinta) {
+	this->nivel = nivelCinta;
+}
+
+void Cinta::setColorCinta(string nueColor) {
+	this->ColorCinta = nueColor;
+}

@@ -18,4 +18,5 @@ public:
 	void setNombre(string);
 	int getEdad();
 	void setEdad(int);
+	Cinta getCinta();
 };

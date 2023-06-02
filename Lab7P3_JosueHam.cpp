@@ -213,7 +213,33 @@ int main()
 			break;
 		}//Listar estudiante
 		case 5: {
+			cout << "Bienvenido a ascender un estudiante" << endl;
+			cout << "De que dojo es?" << endl
+				<< "1-> Dojo Cobra" << endl
+				<< "2-> Dojo Blockchain" << endl
+				<< "Seleccione la opcion que desea: " << endl;
+			int opcionDojo;
+			cin >> opcionDojo;
+			switch (opcionDojo)
+			{
+			case 1: {
+				imprimirCobras(estudiantesCobra);
+				cout << "Seleccione el estudiante que desea: " << endl;
+				int posCobras;
+				cin >> posCobras;
 
+				EstudianteCobra cobra = estudiantesCobra[posCobras];
+				cobra++;
+
+				break;
+			}
+			case 2: {
+
+				break;
+			}
+			default:
+				cout << "Dojo no disponible" << endl;
+			}
 			break;
 		}//Promover cinta del estudiante
 		case 6: {
