@@ -20,3 +20,17 @@ Estudiante::Estudiante(string nombre, int edad, int fuerza, int resistencia, int
 Estudiante::~Estudiante() {
 	delete[] cinta;
 }
+string Estudiante::getNombre() {
+	return nombre;
+}
+
+void Estudiante::setNombre(string nom) {
+	this->nombre = nom;
+}
+
+int Estudiante::getEdad() {
+	return edad;
+}
+void Estudiante::setEdad(int edad) {
+	this->edad = edad;
+}

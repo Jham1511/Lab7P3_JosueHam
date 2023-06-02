@@ -1,7 +1,7 @@
 #include "Cinta.h"
 Cinta::Cinta() {
-	nivel = 1;
-	ColorCinta = "Blanco";
+	this->nivel = 1;
+	this->ColorCinta = "Blanco";
 }
 
 Cinta::~Cinta() {

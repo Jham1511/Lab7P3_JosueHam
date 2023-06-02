@@ -8,6 +8,25 @@
 #include "Cinta.h"
 using namespace std;
 
+
+void imprimirCobras(vector<EstudianteCobra> cobras) {
+	cout << "Estudiantes cobra disponibles" << endl;
+	for (int i = 0; i < cobras.size(); i++)
+	{
+		cout << "Posicion: " << i << endl
+			<< "Nombre: " << cobras[i].getNombre() << endl
+			<< "Edad: " << cobras[i].getEdad() << endl;
+	}
+}
+void imprimirBlockchains(vector<EstudianteBlockchain> blockchains) {
+	cout << "Estudiantes Blockchain disponibles" << endl;
+	for (int i = 0; i < blockchains.size(); i++)
+	{
+		cout << "Posicion: " << i << endl
+			<< "Nombre: " << blockchains[i].getNombre() << endl
+			<< "Edad: " << blockchains[i].getEdad() << endl;
+	}
+}
 int randomEstudiantes() {
 	int aleatorio = 0 + rand() % (31 - 0);
 	return aleatorio;
@@ -67,7 +86,7 @@ int main()
 
 				int fuerzaPiernas = randomFuerza();
 				int overall = fuerza + resistencia + fuerzaPiernas; 
-				Cinta* cinta = nullptr;
+				Cinta* cinta;
 				EstudianteCobra estCobra(nombre, edad, fuerza, resistencia, overall, cinta, fuerzaPiernas);
 				estudiantesCobra.push_back(estCobra);
 				cout << "Estudiante agregado exitosamente" << endl;
@@ -100,7 +119,54 @@ int main()
 			break;
 		}//Crear estudiante
 		case 2: {
+			cout << "Bienvenido a Modificar Estudiante" << endl;
+			cout << "De que dojo es?" << endl
+				<< "1-> Dojo Cobra" << endl
+				<< "2-> Dojo Blockchain" << endl
+				<< "Seleccione la opcion que desea: " << endl;
+			int opcionDojo;
+			cin >> opcionDojo;
+			switch (opcionDojo)
+			{
+				case 1: {
+					imprimirCobras(estudiantesCobra);
+					cout << "Seleccione el estudiante que desea modificar: " << endl;
+					int posEst;
+					cin >> posEst;
 
+					cout << "Ingrese el nuevo nombre: " << endl;
+					string nueNombre;
+					cin >> nueNombre;
+
+					cout << "Ingrese la nueva edad: " << endl;
+					int nueEdad;
+					cin >> nueEdad;
+
+					estudiantesCobra[posEst].setNombre(nueNombre);
+					estudiantesCobra[posEst].setEdad(nueEdad);
+					break;
+				}
+				case 2: {
+					imprimirBlockchains(estudiantesBlockchain);
+					cout << "Seleccione el estudiante que desea modificar: " << endl;
+					int posEst;
+					cin >> posEst;
+
+					cout << "Ingrese el nuevo nombre: " << endl;
+					string nueNombre;
+					cin >> nueNombre;
+
+					cout << "Ingrese la nueva edad: " << endl;
+					int nueEdad;
+					cin >> nueEdad;
+
+					estudiantesBlockchain[posEst].setNombre(nueNombre);
+					estudiantesBlockchain[posEst].setEdad(nueEdad);
+					break;
+				}
+			default:
+				cout << "Dojo no disponible" << endl;
+			}
 			break;
 		}//Modificar estudiante
 		case 3: {

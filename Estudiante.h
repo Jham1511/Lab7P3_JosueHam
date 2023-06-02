@@ -14,4 +14,8 @@ public:
 	Estudiante();
 	Estudiante(string, int, int, int, int, Cinta*);
 	~Estudiante();
+	string getNombre();
+	void setNombre(string);
+	int getEdad();
+	void setEdad(int);
 };
