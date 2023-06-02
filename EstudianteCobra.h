@@ -25,11 +25,12 @@ public:
 		}
 
 	}
+
 EstudianteCobra& operator--(int) {
 		string arregloColores[]{ "Blanco" , "Amarillo", "Naranja", "Verde", "Azul", "Marron" , "Negro" };
 		Cinta cinta = getCinta();
 		int nivelCinta = cinta.getNivelCinta();
-		if ( >= 1)
+		if ( nivelCinta >= 1)
 		{
 			nivelCinta--;
 			cinta.setColorCinta(arregloColores[nivelCinta]);

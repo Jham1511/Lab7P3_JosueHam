@@ -86,7 +86,7 @@ int main()
 
 				int fuerzaPiernas = randomFuerza();
 				int overall = fuerza + resistencia + fuerzaPiernas; 
-				Cinta* cinta;
+				Cinta* cinta = 0;
 				EstudianteCobra estCobra(nombre, edad, fuerza, resistencia, overall, cinta, fuerzaPiernas);
 				estudiantesCobra.push_back(estCobra);
 				cout << "Estudiante agregado exitosamente" << endl;
@@ -107,7 +107,9 @@ int main()
 
 				int fuerzaBrazos = randomFuerza();
 				int overall = fuerza + resistencia + fuerzaBrazos;
-				Cinta* cinta;
+				int level;
+				string color;
+				Cinta* cinta = 0;
 				EstudianteBlockchain estBlockchain(nombre, edad, fuerza, resistencia, overall, cinta, fuerzaBrazos);
 				estudiantesBlockchain.push_back(estBlockchain);
 				cout << "Estudiante agregado exitosamente" << endl;
@@ -230,6 +232,7 @@ int main()
 				cin >> posCobras;
 
 				EstudianteCobra cobra = estudiantesCobra[posCobras];
+				cout << "Pase de aqui" << endl;
 				cobra++;
 				cout << cobra.getNombre() << "ahora es cinta: " << cobra.getCinta().getColorCinta() << "!";
 				break;
