@@ -12,6 +12,6 @@ private:
 	Cinta *cinta;
 public:
 	Estudiante();
-	Estudiante(string, int, int, int, int, Cinta);
+	Estudiante(string, int, int, int, int, Cinta*);
 	~Estudiante();
 };

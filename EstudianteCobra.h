@@ -6,7 +6,7 @@ private:
 	int FuerzaPiernas;
 public:
 	EstudianteCobra();
-	EstudianteCobra(int);
+	EstudianteCobra(string, int, int, int, int, Cinta*, int);
 	~EstudianteCobra();
 	int getFuerzaPiernas();
 	void setFuerzaPiernas(int);
