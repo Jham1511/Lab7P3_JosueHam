@@ -54,6 +54,8 @@ int main()
 
 			break;
 		}//Simulacion
+		default: 
+			cout << "..." << endl;
 		}//Fin del switch
 		opcionIngresada = menu();
 	}//Fin del while
