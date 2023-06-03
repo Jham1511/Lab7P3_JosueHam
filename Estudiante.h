@@ -9,7 +9,7 @@ private:
 	string nombre;
 	int edad, fuerza, resistencia, overall;
 	int vida = 100;
-	Cinta *cinta;
+	Cinta* cinta;
 public:
 	Estudiante();
 	Estudiante(string, int, int, int, int, Cinta*);
@@ -19,4 +19,6 @@ public:
 	int getEdad();
 	void setEdad(int);
 	Cinta getCinta();
+	int getVida();
+	void setVida(int);
 };

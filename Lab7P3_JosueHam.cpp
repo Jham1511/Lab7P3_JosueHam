@@ -86,8 +86,8 @@ int main()
 
 				int fuerzaPiernas = randomFuerza();
 				int overall = fuerza + resistencia + fuerzaPiernas; 
-				Cinta* cinta = 0;
-				EstudianteCobra estCobra(nombre, edad, fuerza, resistencia, overall, cinta, fuerzaPiernas);
+				
+				EstudianteCobra estCobra(nombre, edad, fuerza, resistencia, overall, new Cinta, fuerzaPiernas);
 				estudiantesCobra.push_back(estCobra);
 				cout << "Estudiante agregado exitosamente" << endl;
 				break;
@@ -107,10 +107,8 @@ int main()
 
 				int fuerzaBrazos = randomFuerza();
 				int overall = fuerza + resistencia + fuerzaBrazos;
-				int level;
-				string color;
-				Cinta* cinta = 0;
-				EstudianteBlockchain estBlockchain(nombre, edad, fuerza, resistencia, overall, cinta, fuerzaBrazos);
+				
+				EstudianteBlockchain estBlockchain(nombre, edad, fuerza, resistencia, overall, new Cinta, fuerzaBrazos);
 				estudiantesBlockchain.push_back(estBlockchain);
 				cout << "Estudiante agregado exitosamente" << endl;
 				break;
@@ -231,10 +229,9 @@ int main()
 				int posCobras;
 				cin >> posCobras;
 
-				EstudianteCobra cobra = estudiantesCobra[posCobras];
-				cout << "Pase de aqui" << endl;
-				cobra++;
-				cout << cobra.getNombre() << "ahora es cinta: " << cobra.getCinta().getColorCinta() << "!";
+				
+				estudiantesCobra[posCobras]++;
+				cout << estudiantesCobra[posCobras].getNombre() << " ahora es cinta: " << estudiantesCobra[posCobras].getCinta().getColorCinta() << "!";
 				break;
 			}
 			case 2: {
@@ -243,9 +240,9 @@ int main()
 				int posBlock;
 				cin >> posBlock;
 
-				EstudianteBlockchain estBlock = estudiantesBlockchain[posBlock];
-				estBlock++;
-				cout << estBlock.getNombre() << "ahora es cinta: " << estBlock.getCinta().getColorCinta() << "!";
+			
+				estudiantesBlockchain[posBlock]++;
+				cout << estudiantesBlockchain[posBlock].getNombre() << " ahora es cinta: " << estudiantesBlockchain[posBlock].getCinta().getColorCinta() << "!";
 				break;
 			}
 			default:
@@ -270,9 +267,9 @@ int main()
 				int posCobras;
 				cin >> posCobras;
 
-				EstudianteCobra cobra = estudiantesCobra[posCobras];
-				cobra--;
-				cout << cobra.getNombre() << "ahora es cinta: " << cobra.getCinta().getColorCinta() << "!";
+				
+				estudiantesCobra[posCobras];
+				cout << estudiantesCobra[posCobras].getNombre() << " ahora es cinta: " << estudiantesCobra[posCobras].getCinta().getColorCinta() << "!";
 				break;
 			}
 			case 2: {
@@ -281,9 +278,8 @@ int main()
 				int posBlock;
 				cin >> posBlock;
 
-				EstudianteBlockchain estBlock = estudiantesBlockchain[posBlock];
-				estBlock--;
-				cout << estBlock.getNombre() << "ahora es cinta: " << estBlock.getCinta().getColorCinta() << "!";
+				estudiantesBlockchain[posBlock];
+				cout << estudiantesBlockchain[posBlock].getNombre() << " ahora es cinta: " << estudiantesBlockchain[posBlock].getCinta().getColorCinta() << "!";
 			}
 			default:
 				cout << "Dojo no existente" << endl;
@@ -292,7 +288,18 @@ int main()
 		}//Degradar cinta del estudiante
 
 		case 7: {
+			int contadorPosiciones = 0;
+			if (estudiantesBlockchain.size() > 4 && estudiantesCobra.size() > 4)
+			{
+				while ((estudiantesBlockchain.size() > 1 && estudiantesCobra.size() < 1) 
+					|| (estudiantesCobra.size() > 1 && estudiantesBlockchain.size() < 1))
+				{
+					while (estudiantesCobra[contadorPosiciones].getVida() > 1 || estudiantesCobra[contadorPosiciones].getVida() > 1)
+					{
 
+					}
+				}
+			}
 			break;
 		}//Simulacion
 		default: 

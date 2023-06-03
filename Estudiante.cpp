@@ -8,7 +8,7 @@ Estudiante::Estudiante() {
 	this->cinta = 0;
 	this->vida = 100;
 }
-Estudiante::Estudiante(string nombre, int edad, int fuerza, int resistencia, int overall, Cinta *cinta){
+Estudiante::Estudiante(string nombre, int edad, int fuerza, int resistencia, int overall, Cinta* cinta){
 	this->nombre = nombre;
 	this->edad = edad;
 	this->fuerza = fuerza;
@@ -18,7 +18,7 @@ Estudiante::Estudiante(string nombre, int edad, int fuerza, int resistencia, int
 	this->vida = 100;
 }
 Estudiante::~Estudiante() {
-	delete[] cinta;
+	
 }
 string Estudiante::getNombre() {
 	return nombre;
@@ -36,4 +36,10 @@ void Estudiante::setEdad(int edad) {
 }
 Cinta Estudiante::getCinta() {
 	return *cinta;
+}
+int Estudiante::getVida() {
+	return vida;
+}
+void Estudiante::setVida(int nueVida) {
+	this->vida = nueVida;
 }

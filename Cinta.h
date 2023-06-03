@@ -14,4 +14,7 @@ public:
 	void setNivelCinta(int);
 	string getColorCinta();
 	void setColorCinta(string);
+	void masNivel();
+	void menosNivel();
+	void ColoresNiveles();
 };

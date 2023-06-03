@@ -12,12 +12,11 @@ public:
 	void setFuerzaBrazos(int);
 	EstudianteBlockchain& operator--(int) {
 		string arregloColores[]{ "Blanco" , "Amarillo", "Naranja", "Verde", "Azul", "Marron" , "Negro" };
-		Cinta cinta = getCinta();
-		int nivelCinta = cinta.getNivelCinta();
-		if (nivelCinta >= 1)
+		int nivelCinta = this->getCinta().getNivelCinta();
+		if (this->getCinta().getNivelCinta() >= 1)
 		{
-			nivelCinta--;
-			cinta.setColorCinta(arregloColores[nivelCinta]);
+			this->getCinta().masNivel();
+			this->getCinta().ColoresNiveles();
 			return *this;
 		}
 		else {
@@ -28,12 +27,11 @@ public:
 
 	EstudianteBlockchain& operator++(int) {
 		string arregloColores[]{ "Blanco" , "Amarillo", "Naranja", "Verde", "Azul", "Marron" , "Negro" };
-		Cinta cinta = getCinta();
-		int nivelCinta = cinta.getNivelCinta();
-		if (nivelCinta < 7)
+		int nivelCinta = this->getCinta().getNivelCinta();
+		if (this->getCinta().getNivelCinta() < 7)
 		{
-			nivelCinta++;
-			cinta.setColorCinta(arregloColores[nivelCinta]);
+			this->getCinta().menosNivel();
+			this->getCinta().ColoresNiveles();
 			return *this;
 		}
 		else {
