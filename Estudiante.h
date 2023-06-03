@@ -21,4 +21,6 @@ public:
 	Cinta getCinta();
 	int getVida();
 	void setVida(int);
+	void setFuerza(int);
+	int getFuerza();
 };

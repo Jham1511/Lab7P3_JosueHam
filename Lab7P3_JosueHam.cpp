@@ -51,6 +51,35 @@ int menu() {
 	cin >> numero;
 	return numero;
 }
+
+int porcentajeCintaNiveles(Estudiante estu) {
+	int nivelCinta = estu.getCinta().getNivelCinta();
+	int porcentaje;
+	if (nivelCinta == 1)
+	{
+		porcentaje = 0.4;
+	}
+	else if (nivelCinta == 2) {
+		porcentaje == 0.5;
+	}
+	else if (nivelCinta == 3) {
+		porcentaje = 0.6;
+	}
+	else if (nivelCinta == 4) {
+		porcentaje = 0.7;
+	}
+	else if (nivelCinta == 5) {
+		porcentaje = 0.8;
+	}
+	else if (nivelCinta == 6) {
+		porcentaje = 0.9;
+	}
+	else if (nivelCinta == 7) {
+		porcentaje = 1;
+	}
+	return porcentaje;
+}
+
 int main()
 {
 	srand(time(NULL));
@@ -85,7 +114,7 @@ int main()
 				resistencia = randomEstudiantes();
 
 				int fuerzaPiernas = randomFuerza();
-				int overall = fuerza + resistencia + fuerzaPiernas; 
+				int overall = fuerza + fuerzaPiernas; 
 				
 				EstudianteCobra estCobra(nombre, edad, fuerza, resistencia, overall, new Cinta, fuerzaPiernas);
 				estudiantesCobra.push_back(estCobra);
@@ -106,7 +135,7 @@ int main()
 				resistencia = randomEstudiantes();
 
 				int fuerzaBrazos = randomFuerza();
-				int overall = fuerza + resistencia + fuerzaBrazos;
+				int overall = fuerza  + fuerzaBrazos;
 				
 				EstudianteBlockchain estBlockchain(nombre, edad, fuerza, resistencia, overall, new Cinta, fuerzaBrazos);
 				estudiantesBlockchain.push_back(estBlockchain);
@@ -296,7 +325,9 @@ int main()
 				{
 					while (estudiantesCobra[contadorPosiciones].getVida() > 1 || estudiantesCobra[contadorPosiciones].getVida() > 1)
 					{
-
+						int porcentajeCintaCobra = porcentajeCintaNiveles(estudiantesCobra[contadorPosiciones]);
+						int porcentajeCintaBlockchain = porcentajeCintaNiveles(estudiantesCobra[contadorPosiciones]);
+						int ataqueCobra = estudiantesCobra[contadorPosiciones].getFuerzaPiernas() + estudiantesCobra[contadorPosiciones].getFuerza();
 					}
 				}
 			}

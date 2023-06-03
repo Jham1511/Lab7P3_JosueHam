@@ -43,3 +43,9 @@ int Estudiante::getVida() {
 void Estudiante::setVida(int nueVida) {
 	this->vida = nueVida;
 }
+void Estudiante::setFuerza(int nueFuerza) {
+	this->fuerza = nueFuerza;
+}
+int Estudiante::getFuerza() {
+	return fuerza;
+}
