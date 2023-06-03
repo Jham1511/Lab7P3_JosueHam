@@ -49,3 +49,7 @@ void Estudiante::setFuerza(int nueFuerza) {
 int Estudiante::getFuerza() {
 	return fuerza;
 }
+
+int Estudiante::getResistencia() {
+	return resistencia;
+}

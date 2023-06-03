@@ -326,9 +326,34 @@ int main()
 					while (estudiantesCobra[contadorPosiciones].getVida() > 1 || estudiantesCobra[contadorPosiciones].getVida() > 1)
 					{
 						int porcentajeCintaCobra = porcentajeCintaNiveles(estudiantesCobra[contadorPosiciones]);
-						int porcentajeCintaBlockchain = porcentajeCintaNiveles(estudiantesCobra[contadorPosiciones]);
+						int porcentajeCintaBlockchain = porcentajeCintaNiveles(estudiantesBlockchain[contadorPosiciones]);
 						int ataqueCobra = estudiantesCobra[contadorPosiciones].getFuerzaPiernas() + estudiantesCobra[contadorPosiciones].getFuerza();
+						int ataqueBlockchain = estudiantesBlockchain[contadorPosiciones].getFuerzaBrazos() + estudiantesBlockchain[contadorPosiciones].getFuerza();
+						int defensaCobra = estudiantesCobra[contadorPosiciones].getResistencia() * estudiantesCobra[contadorPosiciones].getCinta().getNivelCinta();
+						int defensaBlockchain = estudiantesBlockchain[contadorPosiciones].getResistencia() * estudiantesBlockchain[contadorPosiciones].getCinta().getNivelCinta();
+						int diferenciaCobra = estudiantesBlockchain[contadorPosiciones].getFuerza() - estudiantesCobra[contadorPosiciones].getResistencia();
+						int diferenciaBlockchain = estudiantesCobra[contadorPosiciones].getFuerza() - estudiantesBlockchain[contadorPosiciones].getResistencia();
+						int vidaActualCobra = estudiantesCobra[contadorPosiciones].getVida();
+						int vidaActualBlockchain = estudiantesBlockchain[contadorPosiciones].getVida();
+						estudiantesCobra[contadorPosiciones].setVida(vidaActualCobra - diferenciaBlockchain);
+						estudiantesCobra[contadorPosiciones].setVida(vidaActualBlockchain - diferenciaCobra);
+
+						cout << "Vida restante estudiante cobra: " << endl
+							<< "Nombre: " << estudiantesCobra[contadorPosiciones].getNombre() << endl
+							<< "Vida: " << estudiantesCobra[contadorPosiciones].getVida() << endl;
+
+						cout << "Vida restante estudiante cobra: " << endl
+							<< "Nombre: " << estudiantesBlockchain[contadorPosiciones].getNombre() << endl
+							<< "Vida: " << estudiantesBlockchain[contadorPosiciones].getVida() << endl;
 					}
+					contadorPosiciones++;
+				}
+				if (estudiantesCobra[contadorPosiciones].getVida() > 1 && estudiantesCobra[contadorPosiciones].getVida() == 0)
+				{
+					cout << "Ganador de la pelea: " << estudiantesCobra[contadorPosiciones].getNombre() << endl;
+				}
+				else if (estudiantesCobra[contadorPosiciones].getVida() == 0 && estudiantesCobra[contadorPosiciones].getVida() > 1) {
+					cout << "Ganador de la pelea: " << estudiantesBlockchain[contadorPosiciones].getNombre() << endl;
 				}
 			}
 			break;

@@ -23,4 +23,5 @@ public:
 	void setVida(int);
 	void setFuerza(int);
 	int getFuerza();
+	int getResistencia();
 };
